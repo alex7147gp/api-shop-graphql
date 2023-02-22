@@ -12,7 +12,7 @@ const httpServer = http.createServer(app)
 const typeDefs = readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8')
 const orm = new PrismaClient();
 
-const port = `0.0.0.0:${process.env.PORT}` || 4000 
+const port = process.env.PORT || 4000 
 
 export default async function start() {
     

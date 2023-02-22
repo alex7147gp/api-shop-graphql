@@ -1,0 +1,86 @@
+type photo {
+    id: ID
+    categoryId: Int 
+    src: String
+    likes: Int
+    liked: Boolean
+    userId: ID
+}
+
+type Category {
+    id: ID
+    cover: String
+    name: String
+    emoji: String
+    path: String
+}
+
+query GetProducts {
+  photos {
+    id
+    categoryId
+    src
+    likes
+    liked
+    userId
+  }
+}
+
+query GetProduct($id: ID!) {
+   photo(id: $id) {
+    id
+    categoryId
+    src
+    likes
+    liked
+    userId
+   }
+}
+
+query GetCategories{
+  categories {
+    id
+    cover
+    name
+    emoji
+    path
+  }
+}
+
+query GetCategory($categoryId: ID!) {
+  photos(categoryId: $categoryId) {
+    id
+    categoryId
+    src
+    likes
+    liked
+    userId
+  }
+}
+
+query GetFavory{
+  favs {
+    id
+    categoryId
+    src
+    likes
+    liked
+    userId
+  }
+}
+
+mutation signup($input: UserCredentials!) {
+  signup(input: $input)
+}
+
+mutation login($input: UserCredentials!) {
+  login(input: $input)
+}
+
+mutation likeProduct($input: LikePhoto!) {
+  likePhoto(input: $input) {
+    id
+    likes
+    liked
+  }
+}

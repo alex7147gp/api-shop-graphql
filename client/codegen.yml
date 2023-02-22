@@ -1,0 +1,10 @@
+overwrite: true
+schema: "https://petgram--api-jcc.vercel.app/graphql"
+documents: "service/queries.graphql"
+generates:
+  "./src/gql/":
+    preset: "client"
+    plugins: 
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typed-document-node'

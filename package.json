@@ -8,9 +8,11 @@
     "client",
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "generate": "graphql-codegen --config codegen.yml"
+  },
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "author": "@jonalvarezz",
   "license": "MIT",
@@ -24,5 +26,9 @@
     "eslint": "7.x",
     "prettier": "^2.4.1",
     "typescript": "4.4.x"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "3.0.0",
+    "@graphql-codegen/client-preset": "2.0.0"
   }
 }
